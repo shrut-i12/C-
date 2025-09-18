@@ -1,0 +1,19 @@
+using System;
+public class age
+{
+    private int Age;
+    public void showAge()
+    {
+        Console.WriteLine("enter a age");
+        Age = 18;
+        Console.WriteLine("age is " + Age);
+    }
+}
+class prog
+{
+    static void Main()
+    {
+    age a = new age();
+        a.showAge();
+    }
+}

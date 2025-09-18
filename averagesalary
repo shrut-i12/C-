@@ -1,0 +1,37 @@
+using System;
+
+class job
+{
+    private int salary;
+    public int Salary
+    {
+        get
+        {
+            return salary;
+        }
+        set
+        {
+            salary = value;
+            if (Salary <= 10000)
+            {
+                Console.WriteLine("IT IS A AVERAGE SALARY");
+            }
+            else
+            {
+                Console.WriteLine("IT IS A GOOD SALARY");
+            }
+        }
+    }
+}
+class Employee
+{
+    static void Main()
+    {
+        job j = new job();
+        Console.WriteLine("ENTER YOUR SALARY:");
+        j.Salary = Convert.ToInt32(Console.ReadLine());
+        
+
+    }
+}
+    

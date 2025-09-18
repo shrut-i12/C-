@@ -1,0 +1,29 @@
+using System;
+class prog
+{
+    static void Main()
+    {
+        try
+        {
+            //nested try block
+            try
+            {
+                Console.Write("enter a number");
+                int divisor = Convert.ToInt32(Console.ReadLine());
+                int divideByZero = 6 / divisor;
+                Console.WriteLine(divideByZero);
+            }
+            //inner catch block
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine("INNER catch is executed" + e.Message);
+            }
+        }
+        //outer catch block
+        catch (DivideByZeroException e)
+        {
+            Console.WriteLine("outer catch block is executed"+e.Message);
+        }
+
+    }
+}

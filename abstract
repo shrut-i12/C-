@@ -1,0 +1,57 @@
+using System;
+abstract class shape
+{
+    public abstract double calculatearea();
+    public abstract double calculateperimeter();
+}
+ class circle : shape
+{
+    private double radius;
+    public circle(double r)
+    {
+        radius = r;
+    }
+    public override double calculatearea()
+    {
+        return Math.PI * radius * radius;
+
+    }
+    public override double calculateperimeter()
+    {
+        return 2* Math.PI* radius;
+    }
+}
+class triangle : shape
+{
+    private double a, b, c;
+
+    public triangle(double side1, double side2,double side3) 
+    {
+        a = side1;b= side2;c = side3;
+    }
+    
+    public override double calculatearea()
+    {
+        double s = (a + b + c) / 2;
+        return Math.Sqrt(s*(s-a)*(s-b)*(s-c));
+    }
+    public override double calculateperimeter()
+    {
+        return a + b + c;
+    }
+
+}
+class program
+{
+    static void Main(string[] args)
+    { 
+        shape circle = new circle(5);
+        Console.WriteLine("circle area:" + circle.calculatearea());
+        Console.WriteLine("circle perimeter "+circle.calculateperimeter());
+        shape triangle = new triangle(3, 4, 5);
+        Console.WriteLine("triangle area "+triangle.calculatearea());
+        Console.WriteLine("triangle perimater"+triangle.calculateperimeter());
+
+        Console.ReadLine();
+    }
+}

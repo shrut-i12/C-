@@ -1,0 +1,69 @@
+using System;
+using System.Security.Cryptography.X509Certificates;
+interface Ipayment
+{
+    void makepayment(double amount);
+}
+class credit_card : Ipayment
+{
+    double amount;
+    public credit_card(double am)
+    {
+        this.amount = am;
+    }
+    public void makepayment(double amount)
+    {
+        this.amount = amount;
+        Console.WriteLine(amount+" = has amount debited  from credit card ");
+    }
+   
+}
+class paypal : Ipayment
+{
+    double amount;
+    public paypal(double am)
+    {
+        this.amount = am;
+    }
+    public void makepayment(double amount)
+    {
+        this.amount = amount;
+        Console.WriteLine(amount+"= has amount debited  from paypal ");
+    }
+
+}
+class upipayment: Ipayment
+{
+    double amount;
+    public upipayment(double am)
+    {
+        this.amount = am;
+    }
+    public void makepayment(double amount)
+    {
+        this.amount = amount;
+        Console.WriteLine(amount+" =  has amount debited  from upipayment ");
+        
+    }
+
+}
+
+
+
+
+class prog
+{
+    static void Main()
+    {
+        credit_card c = new credit_card(1000);
+        c.makepayment(100);
+        paypal p= new paypal(1000);
+        p.makepayment(200);
+        upipayment u= new upipayment(1000);
+        u.makepayment(500);
+
+
+
+
+    }
+}

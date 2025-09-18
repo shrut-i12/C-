@@ -1,0 +1,24 @@
+using System;
+class tc
+{
+    static void Main()
+    {
+        try
+        {
+            Console.Write("enter a number");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("enter a number");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            int result = num1 / num2;
+            Console.WriteLine("result;" + result);
+        }
+        catch (DivideByZeroException)
+        {
+            Console.WriteLine("error:cannot divide by zero!");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("error:plese enter valid number only");
+        }
+    }
+}

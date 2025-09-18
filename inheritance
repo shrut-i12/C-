@@ -1,0 +1,23 @@
+using System;
+class car
+{
+    protected void call()
+    {
+        Console.WriteLine("its BMW its M4");
+    }
+}
+class brand : car
+{
+    public void method_brand()
+    {
+        call();
+    }
+}
+class mainclass
+{
+     public static void Main(string[] args)
+    {
+        brand b=new brand();
+        b.method_brand();
+    }
+}

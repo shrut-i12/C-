@@ -1,0 +1,22 @@
+using System;
+delegate void mydelegate();
+class prog
+{
+    static void method1()
+    {
+        Console.WriteLine("this is cn");
+
+    }
+
+    static void method2()
+    {
+        Console.WriteLine("this is pogo");
+
+    }
+    static void Main(string[] args)
+    {
+        mydelegate d = method1;
+        d += method2;
+        d();
+    }
+}
